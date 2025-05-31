@@ -1,0 +1,44 @@
+nav {
+    background-color: var(--red_velvet);
+    color: beige;
+    padding: 10px;
+}
+
+nav a {
+    color: beige;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.desktop-nav {
+    display: none;
+}
+
+.nav-mid a img{
+    width: 115px;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .mobile-nav, .mobile-menu{
+        display: none;
+    }
+
+    .desktop-nav {
+        display: flex;
+    }
+
+    .nav-mid a img{
+        width: 100px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    nav img {
+        width: 35px;
+    }
+
+}
+

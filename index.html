@@ -3,44 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
     <title>Sweet Mayada Cakes</title>
 </head>
 <body>
     <header>
-        <nav>
-            <div id="nav-left">
+        <nav class="sans-serif">
+            <div class="nav-left desktop-nav" id="desktop-nav-left">
                 <a href="pages/product-category-catalogue.html">Shop</a>
                 <a href="">About us</a>
             </div>
-            <div id="nav-mid">
+            <div class="nav-left mobile-nav" id="mobile-nav-left">
+                <button class="nav-toggle" onclick="openMenu()">☰</button>
+            </div>
+            <div class="nav-mid">
                 <a href="">
-                    <img src="" alt="Sweet Mayada Cakes logo">
+                    <img src="img/sweetmayadalogo.svg" alt="Sweet Mayada Cakes logo">
                 </a>
             </div>
-            <div id="nav-right">
+            <div class="nav-right desktop-nav" id="desktop-nav-right">
                 <a href="">Contact us</a>
                 <a href="">
-                    <img src="" alt="Account">
+                    <img src="img/user.png" alt="Account">
                 </a>
+                <a href="">
+                    <img src="img/shopping-cart.png" alt="Cart">
+                </a>
+            </div>
+            <div class="nav-right mobile-nav" id="mobile-nav-right">
                 <a href="">
                     <img src="" alt="Cart">
                 </a>
             </div>
         </nav>
+
+        <div class="mobile-menu sans-serif" id="mobileMenu">
+            <button class="nav-close" onclick="closeMenu()">✕</button>
+            <a href="/">Home</a>
+            <a href="pages/product-category-catalogue.html">Shop</a>
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
+            <a href="#">Account</a>
+            <a href="#">Cart</a>
+        </div>
     </header>
 
     <main>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+        <div>
+            <img src="img/cake-icons/custom-cakes.png" alt="">
+            <img src="img/cake-icons/everyday-cakes.png" alt="">
+            <img src="img/cake-icons/all-cakes.png" alt="">
+            <img src="img/cake-icons/cupcakes.png" alt="">
+            <img src="img/cake-icons/celebration-cakes.png" alt="">
+        </div>
+        
 
         <div>
-            <h1>Treat yourself to a slice of luxury</h1>
-            <h3>Beautiful handcrafted cakes for any occasion</h3>
-            <a href="">View our cakes</a>
+            <h1 class="serif semibold">Treat yourself to a slice of luxury</h1>
+            <h3 class="sans-serif">Beautiful handcrafted cakes for any occasion</h3>
+            <a href="" class="serif">View our cakes</a>
         </div>
     </main>
 </body>

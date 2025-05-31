@@ -7,6 +7,35 @@
     border: red 1px solid;
 }
 
+.serif {
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.sans-serif {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+
 body {
     background-color: var(--beige);
     margin: 0;
@@ -17,3 +46,4 @@ header {
     margin: 0;
     padding: 0;
 }
+
