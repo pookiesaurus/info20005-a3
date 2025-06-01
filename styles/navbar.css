@@ -12,7 +12,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 105px;
+    height: 90px;
 }
 
 nav a {
@@ -23,6 +23,14 @@ nav a {
 
 .desktop-nav {
     display: none;
+}
+
+.nav-left {
+    margin-left: 15px;
+}
+
+.nav-right {
+    margin-right: 10px;
 }
 
 .nav-mid {
@@ -51,6 +59,57 @@ header button:hover {
     width: 30px;
 }
 
+.menu-close{
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+}
+
+.mobile-menu img {
+    margin-left: 15px;
+}
+
+.mobile-menu {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--red_velvet);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.menu-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu-links a {
+    color: beige;
+    text-decoration: none;
+    font-size: 32px;
+    padding-left: 15px;
+}
+
+.open {
+    display: block;
+    
+}
+
+.side-img {
+    display: none;
+}
+
 @media screen and (min-width: 1024px) {
     .mobile-nav, .mobile-menu{
         display: none;
@@ -62,6 +121,15 @@ header button:hover {
 
     .desktop-nav {
         display: flex;
+        gap: 30px;
+    }
+
+    .nav-left {
+        margin-left: 15px;
+    }
+
+    .nav-right {
+        margin-right: 15px;
     }
 
     .nav-mid a img{
@@ -75,6 +143,11 @@ header button:hover {
     nav img {
         width: 35px;
     }
+
+    .side-img {
+        display: block;
+    }
+
 
 }
 

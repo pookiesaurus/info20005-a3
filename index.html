@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <script src="scripts/navbar.js"></script>
     <title>Sweet Mayada Cakes</title>
 </head>
 <body>
@@ -44,25 +45,31 @@
         </nav>
 
         <div class="mobile-menu sans-serif" id="mobileMenu">
-            <button class="nav-close" onclick="closeMenu()">
-                <img src="img/x.svg" alt="close menu">
-            </button>
-            <a href="/">Home</a>
-            <a href="pages/product-category-catalogue.html">Shop</a>
-            <a href="#">About us</a>
-            <a href="#">Contact</a>
-            <a href="#">Account</a>
-            <a href="#">Cart</a>
+            <div class="menu-close">
+                 <button class="nav-close" onclick="closeMenu()">
+                    <img src="img/x.svg" alt="close menu">
+                </button>
+            </div>
+
+            <div class="menu-links">
+                <a href="/">Home</a>
+                <a href="pages/product-category-catalogue.html">Shop</a>
+                <a href="#">About us</a>
+                <a href="#">Contact</a>
+                <a href="#">Account</a>
+                <a href="#">Cart</a>
+            </div>
+            
         </div>
     </header>
 
     <main>
         <div>
-            <img src="img/cake-icons/custom-cakes.png" alt="">
-            <img src="img/cake-icons/everyday-cakes.png" alt="">
+            <img class="side-img" src="img/cake-icons/custom-cakes.png" alt="">
+            <img class="side-img" src="img/cake-icons/everyday-cakes.png" alt="">
             <img src="img/cake-icons/all-cakes.png" alt="">
-            <img src="img/cake-icons/cupcakes.png" alt="">
-            <img src="img/cake-icons/celebration-cakes.png" alt="">
+            <img class="side-img" src="img/cake-icons/cupcakes.png" alt="">
+            <img class="side-img" src="img/cake-icons/celebration-cakes.png" alt="">
         </div>
         
 
