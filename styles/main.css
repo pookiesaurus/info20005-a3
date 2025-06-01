@@ -35,6 +35,17 @@
     font-weight: 700;
 }
 
+.red-velvet {
+    color: var(--red_velvet);
+}
+
+.beige {
+    color: var(--beige);
+}
+
+.red-velvet-bg {
+    background-color: var(--red_velvet);
+}
 
 body {
     background-color: var(--beige);
