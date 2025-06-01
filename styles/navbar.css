@@ -1,7 +1,18 @@
+a {
+  display: flex;
+  justify-content: center; /* horizontal centring */
+  align-items: center;     /* vertical centring */
+  text-align: center;
+}
+
 nav {
     background-color: var(--red_velvet);
     color: beige;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 105px;
 }
 
 nav a {
@@ -14,14 +25,39 @@ nav a {
     display: none;
 }
 
+.nav-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .nav-mid a img{
     width: 115px;
 }
 
+header button {
+    background-color: var(--red_velvet);
+    border: none;
+}
+
+header button:hover {
+    cursor: pointer;
+}
+
+.mobile-nav img, .mobile-menu img {
+    width: 30px;
+}
 
 @media screen and (min-width: 1024px) {
     .mobile-nav, .mobile-menu{
         display: none;
+    }
+
+    nav {
+        height: 80px;
     }
 
     .desktop-nav {
