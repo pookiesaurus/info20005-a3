@@ -12,29 +12,59 @@
     <script src="../scripts/navbar.js"></script>
 </head>
 <body>
-    <nav>
-        <div id="nav-left">
-            <a href="">Shop</a>
-            <a href="">About us</a>
-        </div>
-        <div id="nav-mid">
-            <a href="../index.html">
-                <img src="" alt="Sweet Mayada Cakes logo">
-            </a>
-        </div>
-        <div id="nav-right">
-            <a href="">Contact us</a>
-            <a href="">
-                <img src="" alt="Account">
-            </a>
-            <a href="">
-                <img src="" alt="Cart">
-            </a>
-        </div>
-    </nav>
-
     <header>
-        <h1>Checkout</h1>
+        <nav class="sans-serif">
+            <div class="nav-left desktop-nav" id="desktop-nav-left">
+                <a href="product-category-catalogue.html">Shop</a>
+                <a href="">About us</a>
+            </div>
+            <div class="nav-left mobile-nav" id="mobile-nav-left">
+                <button class="nav-toggle" onclick="openMenu()">
+                    <img src="../img/hamburger.svg" alt="menu">
+                </button>
+            </div>
+            <div class="nav-mid">
+                <a href="../index.html">
+                    <img src="../img/sweetmayadalogo.svg" alt="Sweet Mayada Cakes logo">
+                </a>
+            </div>
+            <div class="nav-right desktop-nav" id="desktop-nav-right">
+                <a href="">Contact us</a>
+                <a href="">
+                    <img src="../img/user.png" alt="Account">
+                </a>
+                <a href="cart.html">
+                    <img src="../img/shopping-cart.png" alt="Cart">
+                </a>
+            </div>
+            <div class="nav-right mobile-nav" id="mobile-nav-right">
+                <a href="cart.html">
+                    <img src="../img/shopping-cart.png" alt="Cart">
+                </a>
+            </div>
+        </nav>
+
+        <div class="mobile-menu sans-serif" id="mobileMenu">
+            <div class="menu-close">
+                 <button class="nav-close" onclick="closeMenu()">
+                    <img src="../img/x.svg" alt="close menu">
+                </button>
+            </div>
+
+            <div class="menu-links">
+                <a href="../index.html">Home</a>
+                <a href="product-category-catalogue.html">Shop</a>
+                <a href="#">About us</a>
+                <a href="#">Contact</a>
+                <a href="#">Account</a>
+                <a href="cart.html">Cart</a>
+            </div>
+            
+        </div>
     </header>
+
+    <main>
+        <h1>Checkout</h1>
+    </main>
 </body>
 </html>
