@@ -1,0 +1,74 @@
+:root {
+    --beige: #F2E9DA;
+    --red_velvet: #4F0A0C;
+    --terracotta: #703735;
+    --dried_rose: #90635E;
+    --baileys: #DAC8BB;
+}
+
+.cake-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+    width: calc(100% - 50px);
+    background-color: var(--baileys);
+    height: 310px;
+}
+
+.cake-category img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain
+}
+
+.cake-category p {
+    background-color: var(--dried_rose);
+    color: var(--beige);
+    margin: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.category-container a {
+    text-decoration: none;
+}
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    .category-container {
+        display: grid;
+        gap: 20px;
+        padding: 30px;
+        padding-top: 0;
+        grid-template-columns: repeat(3, 1fr);
+        width: calc(100vw - 60px);
+    }
+
+    .category-container a {
+        flex: 0 0 300px;
+        min-width: 350px;
+        height: 350px;
+    }
+
+    .cake-category {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .category-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}

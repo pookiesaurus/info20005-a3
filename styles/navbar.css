@@ -37,7 +37,7 @@ nav a {
 }
 
 .nav-right {
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .nav-mid {
@@ -132,13 +132,13 @@ header button:hover {
         gap: 30px;
     }
 
-    .nav-left {
+    /* .nav-left {
         margin-left: 15px;
     }
 
     .nav-right {
         margin-right: 15px;
-    }
+    } */
 
     .nav-mid a img{
         width: 100px;
