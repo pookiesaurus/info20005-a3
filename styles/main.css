@@ -58,3 +58,14 @@ header {
     padding: 0;
 }
 
+main {
+    margin-top: calc(90px + 20px);
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        margin-top: calc(80px + 20px);
+        
+    }
+    
+}

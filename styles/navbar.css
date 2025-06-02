@@ -5,6 +5,11 @@ a {
   text-align: center;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
 nav {
     background-color: var(--red_velvet);
     color: beige;
@@ -13,6 +18,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    width: calc(100vw - 20px);
     z-index: 50;
 }
 
