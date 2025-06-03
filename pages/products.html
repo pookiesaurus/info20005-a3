@@ -65,11 +65,86 @@
     </header>
 
     <main>
-        <h1>Product Catalogue</h1>
+        <div class="page-title">
+            <h1 class="serif medium">Shop</h1>
+        </div>
 
-        <div>
-            <input type="text" id="search" name="search" placeholder="Search for a product">
-            <button type="submit">Search</button>
+        <div class="search-container">
+            <input class="search-bar sans-serif" type="text" id="search" name="search" placeholder="Search for a product...">
+        </div>
+
+         <div class="sidebar">
+            <div class="filter-group">
+                <h3>Sort by</h3>
+                <div class="sort-options">
+                    <label class="sans-serif">
+                        <input type="radio" name="sort" value="relevance" checked>
+                        Relevance
+                    </label>
+                    <label class="sans-serif">
+                        <input type="radio" name="sort" value="name-asc">
+                        Name (Ascending)
+                    </label>
+                    <label class="sans-serif">
+                        <input type="radio" name="sort" value="name-desc">
+                        Name (Descending)
+                    </label>
+                    <label class="sans-serif">
+                        <input type="radio" name="sort" value="price-low-high">
+                        Price (Low to High)
+                    </label>
+                    <label class="sans-serif">
+                        <input type="radio" name="sort" value="price-high-low">
+                        Price (High to Low)
+                    </label>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h3>Category</h3>
+                <label class="sans-serif">
+                    <input type="checkbox" name="category" value="wedding-cakes">
+                    Wedding Cakes
+                </label>
+                <label class="sans-serif">
+                    <input type="checkbox" name="category" value="everyday-cakes">
+                    Everyday Cakes
+                </label>
+                <label class="sans-serif">
+                    <input type="checkbox" name="category" value="celebration-cakes">
+                    Celebration Cakes
+                </label>
+                <label class="sans-serif">
+                    <input type="checkbox" name="category" value="custom-cakes">
+                    Custom Cakes
+                </label>
+                <label class="sans-serif">
+                    <input type="checkbox" name="category" value="cupcakes">
+                    Cupcakes
+                </label>
+                <label class="sans-serif">
+                    <input type="checkbox" name="category" value="other-desserts">
+                    Other Desserts
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Price</h3>
+                <div class="slider">
+                    <input type="range" class="price-min" name="price-range" min="0" max="1500" value="0" step="10">
+                    <input type="range" class="price-max" name="price-range" min="0" max="1500" value="1500" step="10">
+                </div>
+                <div class="price-input">
+                    <input type="number" id="min-price" placeholder="Min" min="0">
+                    <p>-</p>
+                    <input type="number" id="max-price" placeholder="Max" min="0">
+                </div>
+            </div>
+
+            <div class="search-buttons">
+                <button type="button">Reset filters</button>
+                <button type="button">Apply filters</button>
+            </div>
         </div>
 
 
