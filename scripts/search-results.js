@@ -1,12 +1,16 @@
-// function checkViewport() {
-//   if (window.innerWidth >= 1024) {
-//     document.querySelector('.advanced-search-toggle').classList.add('hidden');
-//     document.querySelector('.filter-border').classList.add('hidden');
-//     document.querySelector('.filters-container').classList.remove('hidden');
-//   } else {
-//     document.querySelector('.advanced-search-toggle').classList.remove('hidden');
-//   }
-// }
+window.addEventListener('DOMContentLoaded', () => {
+    const url = new URL(window.location.href);
+    const params = url.searchParams;
 
-// window.addEventListener('resize', checkViewport);
-// window.addEventListener('load', checkViewport);
+    const categories = params.get('categories');
+    const minPrice = params.get('min');
+    const maxPrice = params.get('max');
+    const sort = params.get('sort');
+    const search = params.get('search');
+
+    console.log('Categories:', categories);
+    console.log('Min Price:', minPrice);
+    console.log('Max Price:', maxPrice);
+    console.log('Sort:', sort);
+    console.log('Search:', search);
+});

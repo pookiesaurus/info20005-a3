@@ -25,7 +25,7 @@ priceInput.forEach(input => {
         let maxPrice = parseInt(priceInput[1].value);
 
         if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
-            if (e.target.className === "input-min") {
+            if (e.target.classList.contains("input-min")) {
                 rangeInput[0].value = minPrice;
                 range.style.left = ((minPrice / 1500) * 100) + "%";
             } else {
@@ -42,7 +42,7 @@ rangeInput.forEach(input => {
         let maxVal = parseInt(rangeInput[1].value);
 
         if ((maxVal - minVal) < priceGap) {
-            if (e.target.className === "price-min") {
+            if (e.target.classList.contains("price-min")) {
                 rangeInput[0].value = maxVal - priceGap;
             } else {
                 rangeInput[1].value = minVal + priceGap;
@@ -65,5 +65,40 @@ range.style.left = ((minVal / 1500) * 100) + "%";
 range.style.right = 100 - (maxVal / 1500) * 100 + "%";
 
 
+function clearSearchForm() {
+    // Reset price sliders and inputs
+    priceInput[0].value = 0;
+    priceInput[1].value = 1500;
+    rangeInput[0].value = 0;
+    rangeInput[1].value = 1500;
+    range.style.left = "0%";
+    range.style.right = "0%";
+
+    // Clear other inputs in advanced search if any
+    const advancedInputs = document.querySelectorAll(".advanced-search-container input, .advanced-search-container select");
+    advancedInputs.forEach(input => {
+        if (input.type === "checkbox" || input.type === "radio") {
+            input.checked = false;
+        } else if (input.tagName === "SELECT") {
+            input.selectedIndex = 0;
+        } else if (input !== priceInput[0] && input !== priceInput[1]) {
+            input.value = "";
+        }
+    });
+}
+
 // Search functionality
-const searchInput = document.getElementById("search");
+function performSearch() {
+    console.log("performSearch called");
+    const categories =  Array.from(document.querySelectorAll("input[name='category']:checked")).map(input => input.value);
+    const minPrice = parseInt(priceInput[0].value);
+    const maxPrice = parseInt(priceInput[1].value);
+    const sort = document.querySelector("input[name='sort']:checked").value;
+    const searchQuery = document.querySelector("#search").value.trim();
+
+    // Construct the search URL
+    let searchURL = `/pages/products.html?categories=${encodeURIComponent(categories.join(','))}&min=${minPrice}&max=${maxPrice}&sort=${sort}&search=${encodeURIComponent(searchQuery)}`;
+
+    // Redirect to the search results page
+    window.location.href = searchURL;
+}
