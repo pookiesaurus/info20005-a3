@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../styles/categories.css">
     <link rel="stylesheet" href="../styles/search.css">
     <script src="../scripts/navbar.js"></script>
-    <script src="../scripts/search.js"></script>
+    <script src="../scripts/search.js" defer></script>
 </head>
 <body>
     <header>
@@ -81,80 +81,89 @@
             <button type="button" id="toggle-advanced" class="sans-serif bold" onclick="toggleAdvancedSearch()">Advanced Search</button>
         </div>
 
-        <div class="filters-container sans-serif terracotta">
-            <div class="filter-group">
-                <h3>Sort by</h3>
-                <div class="sort-options">
+        <div class="advanced-search-container hidden">
+            <div class="filter-border"></div>
+
+            <div class="filters-container sans-serif terracotta">
+                <div class="filter-group">
+                    <h3>Sort by</h3>
+                    <div class="sort-options">
+                        <label class="sans-serif">
+                            <input type="radio" name="sort" value="relevance" checked>
+                            Relevance
+                        </label>
+                        <label class="sans-serif">
+                            <input type="radio" name="sort" value="name-asc">
+                            Name (Ascending)
+                        </label>
+                        <label class="sans-serif">
+                            <input type="radio" name="sort" value="name-desc">
+                            Name (Descending)
+                        </label>
+                        <label class="sans-serif">
+                            <input type="radio" name="sort" value="price-low-high">
+                            Price (Low to High)
+                        </label>
+                        <label class="sans-serif">
+                            <input type="radio" name="sort" value="price-high-low">
+                            Price (High to Low)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Category</h3>
                     <label class="sans-serif">
-                        <input type="radio" name="sort" value="relevance" checked>
-                        Relevance
+                        <input type="checkbox" name="category" value="wedding-cakes">
+                        Wedding Cakes
                     </label>
                     <label class="sans-serif">
-                        <input type="radio" name="sort" value="name-asc">
-                        Name (Ascending)
+                        <input type="checkbox" name="category" value="everyday-cakes">
+                        Everyday Cakes
                     </label>
                     <label class="sans-serif">
-                        <input type="radio" name="sort" value="name-desc">
-                        Name (Descending)
+                        <input type="checkbox" name="category" value="celebration-cakes">
+                        Celebration Cakes
                     </label>
                     <label class="sans-serif">
-                        <input type="radio" name="sort" value="price-low-high">
-                        Price (Low to High)
+                        <input type="checkbox" name="category" value="custom-cakes">
+                        Custom Cakes
                     </label>
                     <label class="sans-serif">
-                        <input type="radio" name="sort" value="price-high-low">
-                        Price (High to Low)
+                        <input type="checkbox" name="category" value="cupcakes">
+                        Cupcakes
+                    </label>
+                    <label class="sans-serif">
+                        <input type="checkbox" name="category" value="other-desserts">
+                        Other Desserts
                     </label>
                 </div>
-            </div>
 
-            <div class="filter-group">
-                <h3>Category</h3>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="wedding-cakes">
-                    Wedding Cakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="everyday-cakes">
-                    Everyday Cakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="celebration-cakes">
-                    Celebration Cakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="custom-cakes">
-                    Custom Cakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="cupcakes">
-                    Cupcakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="other-desserts">
-                    Other Desserts
-                </label>
-            </div>
-
-            <div class="filter-group">
-                <h3>Price</h3>
-                <div class="slider">
-                    <input type="range" class="price-min" name="price-range" min="0" max="1500" value="0" step="10">
-                    <input type="range" class="price-max" name="price-range" min="0" max="1500" value="1500" step="10">
+                <div class="filter-group">
+                    <h3>Price</h3>
+                    <div class="slider-container">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="slider">
+                        <input type="range" class="price-min" name="price-range" min="0" max="1500" value="0" step="10">
+                        <input type="range" class="price-max" name="price-range" min="0" max="1500" value="1500" step="10">
+                    </div>
+                    <div class="price-input">
+                        <input type="number" id="min-price" placeholder="Min" min="0" max="1500" class="input-min sans-serif medium">
+                        <div class="divider"></div>
+                        <input type="number" id="max-price" placeholder="Max" min="0" max="1500" class="input-max sans-serif medium">
+                    </div>
                 </div>
-                <div class="price-input">
-                    <input type="number" id="min-price" placeholder="Min" min="0">
-                    <p>-</p>
-                    <input type="number" id="max-price" placeholder="Max" min="0">
+
+                <div class="search-buttons">
+                    <button type="button" id="reset-btn" class="sans-serif">Reset filters</button>
+                    <button type="button" id="search-btn" class="sans-serif">Search</button>
                 </div>
             </div>
+            
+            <div class="filter-border" id="bottom-border"></div>
 
-            <div class="search-buttons">
-                <button type="button">Reset filters</button>
-                <button type="button">Search</button>
-            </div>
         </div>
-        
 
         <div class="category-container">
             <a href="all-cakes.html">

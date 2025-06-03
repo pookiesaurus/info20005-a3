@@ -10,7 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/search.css">
+    <link rel="stylesheet" href="../styles/search-results.css">
     <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/search.js" defer></script>
+    <script src="../scripts/search-results.js" defer></script>
 </head>
 <body>
     <header>
@@ -73,89 +77,106 @@
             <input class="search-bar sans-serif" type="text" id="search" name="search" placeholder="Search for a product...">
         </div>
 
-         <div class="sidebar">
-            <div class="filter-group">
-                <h3>Sort by</h3>
-                <div class="sort-options">
-                    <label class="sans-serif">
-                        <input type="radio" name="sort" value="relevance" checked>
-                        Relevance
-                    </label>
-                    <label class="sans-serif">
-                        <input type="radio" name="sort" value="name-asc">
-                        Name (Ascending)
-                    </label>
-                    <label class="sans-serif">
-                        <input type="radio" name="sort" value="name-desc">
-                        Name (Descending)
-                    </label>
-                    <label class="sans-serif">
-                        <input type="radio" name="sort" value="price-low-high">
-                        Price (Low to High)
-                    </label>
-                    <label class="sans-serif">
-                        <input type="radio" name="sort" value="price-high-low">
-                        Price (High to Low)
-                    </label>
-                </div>
-            </div>
-            
-            <div class="filter-group">
-                <h3>Category</h3>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="wedding-cakes">
-                    Wedding Cakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="everyday-cakes">
-                    Everyday Cakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="celebration-cakes">
-                    Celebration Cakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="custom-cakes">
-                    Custom Cakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="cupcakes">
-                    Cupcakes
-                </label>
-                <label class="sans-serif">
-                    <input type="checkbox" name="category" value="other-desserts">
-                    Other Desserts
-                </label>
-            </div>
-
-            <div class="filter-group">
-                <h3>Price</h3>
-                <div class="slider">
-                    <input type="range" class="price-min" name="price-range" min="0" max="1500" value="0" step="10">
-                    <input type="range" class="price-max" name="price-range" min="0" max="1500" value="1500" step="10">
-                </div>
-                <div class="price-input">
-                    <input type="number" id="min-price" placeholder="Min" min="0">
-                    <p>-</p>
-                    <input type="number" id="max-price" placeholder="Max" min="0">
-                </div>
-            </div>
-
-            <div class="search-buttons">
-                <button type="button">Reset filters</button>
-                <button type="button">Apply filters</button>
-            </div>
+        <div class="advanced-search-toggle search-results-page">
+            <button type="button" id="toggle-advanced" class="sans-serif bold" onclick="toggleAdvancedSearch()">Advanced Search</button>
         </div>
 
+        <div class="results">
+            <div class="advanced-search-container hidden-if-mobile">
+                <div class="filter-border search-results-page"></div>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/200x200" alt="Product Image">
-            <h2>Product Name</h2>
-            <p class="product-description">This is a short description of the product.</p>
-            <p class="product-price">$0.00</p>
-            <button>Add to Cart</button>
-        </div>
+                <div class="filters-container sans-serif terracotta">
+                    <div class="filter-group">
+                        <h3>Sort by</h3>
+                        <div class="sort-options">
+                            <label class="sans-serif">
+                                <input type="radio" name="sort" value="relevance" checked>
+                                Relevance
+                            </label>
+                            <label class="sans-serif">
+                                <input type="radio" name="sort" value="name-asc">
+                                Name (Ascending)
+                            </label>
+                            <label class="sans-serif">
+                                <input type="radio" name="sort" value="name-desc">
+                                Name (Descending)
+                            </label>
+                            <label class="sans-serif">
+                                <input type="radio" name="sort" value="price-low-high">
+                                Price (Low to High)
+                            </label>
+                            <label class="sans-serif">
+                                <input type="radio" name="sort" value="price-high-low">
+                                Price (High to Low)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Category</h3>
+                        <label class="sans-serif">
+                            <input type="checkbox" name="category" value="wedding-cakes">
+                            Wedding Cakes
+                        </label>
+                        <label class="sans-serif">
+                            <input type="checkbox" name="category" value="everyday-cakes">
+                            Everyday Cakes
+                        </label>
+                        <label class="sans-serif">
+                            <input type="checkbox" name="category" value="celebration-cakes">
+                            Celebration Cakes
+                        </label>
+                        <label class="sans-serif">
+                            <input type="checkbox" name="category" value="custom-cakes">
+                            Custom Cakes
+                        </label>
+                        <label class="sans-serif">
+                            <input type="checkbox" name="category" value="cupcakes">
+                            Cupcakes
+                        </label>
+                        <label class="sans-serif">
+                            <input type="checkbox" name="category" value="other-desserts">
+                            Other Desserts
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Price</h3>
+                        <div class="slider-container">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="slider">
+                            <input type="range" class="price-min" name="price-range" min="0" max="1500" value="0" step="10">
+                            <input type="range" class="price-max" name="price-range" min="0" max="1500" value="1500" step="10">
+                        </div>
+                        <div class="price-input">
+                            <input type="number" id="min-price" placeholder="Min" min="0" max="1500" class="input-min sans-serif medium">
+                            <div class="divider"></div>
+                            <input type="number" id="max-price" placeholder="Max" min="0" max="1500" class="input-max sans-serif medium">
+                        </div>
+                    </div>
+
+                    <div class="search-buttons">
+                        <button type="button" id="reset-btn" class="sans-serif">Reset filters</button>
+                        <button type="button" id="search-btn" class="sans-serif">Search</button>
+                    </div>
+                </div>
+                
+                <div class="filter-border search-results-page" id="bottom-border"></div>
+
+            </div>
+
+            <div class="products-container">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/200x200" alt="Product Image">
+                    <h2>Product Name</h2>
+                    <p class="product-description">This is a short description of the product.</p>
+                    <p class="product-price">$0.00</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
         
+        </div>
     </main>
     
 </body>

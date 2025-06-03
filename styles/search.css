@@ -12,8 +12,152 @@
     margin-bottom: 15px;
 }
 
-::selection {
-    background: var(--red_velvet);
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: calc(100vw - 50px);
+}
+
+.search-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: calc(100vw - 50px);
+}
+
+.price-input {
+    display: flex;
+}
+
+.sort-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filters-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.filter-border {
+    width: calc(100vw - 50px);
+    height: 1px;
+    border-top: 2px solid var(--terracotta);
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#bottom-border {
+    margin-bottom: 25px;
+}
+
+#min-price, #max-price {
+    width: 40%;
+    background-color: var(--beige);
+    border: 1px solid var(--dried_rose);
+    border-radius: 12.5px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    color: var(--red_velvet);
+}
+
+#min-price:focus, #max-price:focus {
+    outline: none;
+    border-color: var(--terracotta);
+}
+
+.divider {
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 1px;
+    border-top: 1px solid var(--terracotta);
+    align-self: center;
+}
+
+#reset-btn, #search-btn {
+    background-color: var(--terracotta);
+    color: var(--beige);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12.5px;
+    width: 100%;
+}
+
+#reset-btn {
+    background-color: var(--beige);
+    color: var(--red_velvet);
+    border: 2px solid var(--terracotta);
+    margin-top: 18.72px;
+    margin-bottom: 8.72px;
+}
+
+#search-btn {
+    margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--terracotta);
+}
+
+input[type="range"] {
+  accent-color: var(--terracotta);
+}
+
+.slider-container {
+    height: 5px;
+    position: relative;
+    border-radius: 5px;
+    background: var(--baileys);
+}
+
+.slider-container .progress {
+    position: absolute;
+    height: 100%;
+    background: var(--terracotta);
+    border-radius: 5px;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider input[type="range"] {
+    width: 100%;
+    appearance: none;
+    background: transparent;
+    position: absolute;
+    top: -23px;
+    pointer-events: none;
+    left: -2px;
+}
+/*code borrowed from Danish Laeeq on 3/6/2025 at https://codepen.io/danishlaeeq/pen/OJvGmaY in order to fix the overlapping slider issue*/
+input[type="range"]::-webkit-slider-thumb {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: var(--red_velvet);
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+input[type="range"]::-moz-range-thumb {
+  height: 17px;
+  width: 17px;
+  border: none;
+  border-radius: 50%;
+  background: var(--red_velvet);
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
 }
 
 @media screen and (min-width: 1024px) {
@@ -24,5 +168,30 @@
     .advanced-search-toggle {
         margin-left: 30px;
     }
-    
+
+    .filters-container {
+        width: calc(100% - 60px);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 100px;
+        align-items: start;
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .search-buttons {
+        width: 100%;
+    }
+
+    .search-results-page {
+        display: none;
+    }
+}
+
+.hidden {
+    display: none;
 }
