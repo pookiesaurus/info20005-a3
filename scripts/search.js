@@ -102,3 +102,13 @@ function performSearch() {
     // Redirect to the search results page
     window.location.href = searchURL;
 }
+
+// Event listeners for search form
+const searchInput = document.getElementById("search");
+
+searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent form submission
+        performSearch(); // Call the search function
+    }
+});
