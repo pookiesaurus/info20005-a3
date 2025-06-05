@@ -79,6 +79,11 @@
 .search-query {
     font-size: 20px;
     margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.advanced-search-toggle {
+    margin-bottom: 10px;
 }
 
 .num-items {
