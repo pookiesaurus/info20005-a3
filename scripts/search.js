@@ -120,7 +120,7 @@ function performSearch() {
     const searchQuery = document.querySelector("#search").value.trim();
 
     // Construct the search URL
-    let searchURL = `/pages/products.html?categories=${encodeURIComponent(categories.join(','))}&min=${minPrice}&max=${maxPrice}&sort=${sort}&search=${encodeURIComponent(searchQuery)}`;
+    let searchURL = `pages/products.html?categories=${encodeURIComponent(categories.join(','))}&min=${minPrice}&max=${maxPrice}&sort=${sort}&search=${encodeURIComponent(searchQuery)}`;
 
     // Redirect to the search results page
     window.location.href = searchURL;
