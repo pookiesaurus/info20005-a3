@@ -1,6 +1,6 @@
 const products = [
     // Everyday Cakes (1–10)
-    {id: 1, item: "Product 1", category: "everyday-cakes", price: 25.00, description: "Description of Product 1", image: "https://placehold.co/600x400.png"},
+    {id: 1, item: "Product 1", category: "everyday-cakes", price: 25.00, description: "Description of Product 1", image: "https://wtk-live-public.s3.ap-southeast-2.amazonaws.com/public/Uploads/Jordan-Rondel_Web-final.jpg"},
     {id: 2, item: "Product 2", category: "everyday-cakes", price: 30.00, description: "Description of Product 2", image: "https://placehold.co/600x400.png"},
     {id: 3, item: "Product 3", category: "everyday-cakes", price: 27.50, description: "Description of Product 3", image: "https://placehold.co/600x400.png"},
     {id: 4, item: "Product 4", category: "everyday-cakes", price: 29.00, description: "Description of Product 4", image: "https://placehold.co/600x400.png"},
@@ -70,4 +70,95 @@ const products = [
     {id: 58, item: "Product 58", category: "other-desserts", price: 14.50, description: "Description of Product 58", image: "https://placehold.co/600x400.png"},
     {id: 59, item: "Product 59", category: "other-desserts", price: 18.00, description: "Description of Product 59", image: "https://placehold.co/600x400.png"},
     {id: 60, item: "Product 60", category: "other-desserts", price: 15.00, description: "Description of Product 60", image: "https://placehold.co/600x400.png"},
+];
+
+
+const variants = [
+    {
+        category: "everyday-cakes",
+        size: [
+            {label: "6-inch", value: "6-inch", priceModifier: 1},
+            {label: "8-inch", value: "8-inch", priceModifier: 1.2},
+            {label: "10-inch", value: "10-inch", priceModifier: 1.4}
+        ],
+        flavor: [
+            {label: "Chocolate", value: "chocolate", priceModifier: 1},
+            {label: "Vanilla", value: "vanilla", priceModifier: 1},
+            {label: "Lemon", value: "lemon", priceModifier: 1},
+            {label: "Carrot", value: "carrot", priceModifier: 1}
+        ]
+    },
+    {
+        category: "celebration-cakes",
+        size: [
+            {label: "8-inch", value: "8-inch", priceModifier: 1},
+            {label: "10-inch", value: "10-inch", priceModifier: 1.15},
+            {label: "12-inch", value: "12-inch", priceModifier: 1.31}
+        ],
+        flavor: [
+            {label: "Chocolate", value: "chocolate", priceModifier: 1},
+            {label: "Vanilla", value: "vanilla", priceModifier: 1},
+            {label: "Red Velvet", value: "red-velvet", priceModifier: 1},
+            {label: "Funfetti", value: "funfetti", priceModifier: 1}
+        ]
+    },
+    {
+        category: "wedding-cakes",
+        tier: [
+            {label: "2 Tiers", value: "2-tiers", priceModifier: 1},
+            {label: "3 Tiers", value: "3-tiers", priceModifier: 1.25},
+            {label: "4 Tiers", value: "4-tiers", priceModifier: 1.5}
+        ],
+        flavor: [
+            {label: "Chocolate Mud", value: "chocolate-mud", priceModifier: 1},
+            {label: "Vanilla Bean", value: "vanilla-bean", priceModifier: 1},
+            {label: "Lemon Elderflower", value: "lemon-elderflower", priceModifier: 1},
+            {label: "Raspberry Swirl", value: "raspberry-swirl", priceModifier: 1}
+        ]
+    },
+    {
+        category: "custom-cakes",
+        shape: [
+            {label: "Round", value: "round", priceModifier: 1},
+            {label: "Square", value: "square", priceModifier: 1},
+            {label: "Heart", value: "heart", priceModifier: 1}
+        ],
+        flavor: [
+            {label: "Chocolate", value: "chocolate", priceModifier: 1},
+            {label: "Vanilla", value: "vanilla", priceModifier: 1},
+            {label: "Marble", value: "marble", priceModifier: 1},
+            {label: "Cookies & Cream", value: "cookies-cream", priceModifier: 1}
+        ],
+        decoration: [
+            {label: "Photo Print", value: "photo-print", priceModifier: 1},
+            {label: "Fondant Art", value: "fondant-art", priceModifier: 1},
+            {label: "Edible Flowers", value: "edible-flowers", priceModifier: 1}
+        ]
+    },
+    {
+        category: "cupcakes",
+        quantity: [
+            {label: "Box of 6", value: "6", priceModifier: 1},
+            {label: "Box of 12", value: "12", priceModifier: 1.95},
+            {label: "Box of 24", value: "24", priceModifier: 3.75}
+        ],
+        flavor: [
+            {label: "Chocolate", value: "chocolate", priceModifier: 1},
+            {label: "Vanilla", value: "vanilla", priceModifier: 1},
+            {label: "Red Velvet", value: "red-velvet", priceModifier: 1},
+            {label: "Salted Caramel", value: "salted-caramel", priceModifier: 1}
+        ],
+        icing: [
+            {label: "Buttercream", value: "buttercream", priceModifier: 1},
+            {label: "Cream Cheese", value: "cream-cheese", priceModifier: 1}
+        ]
+    },
+    {
+        category: "other-desserts",
+        size: [
+            {label: "Single", value: "single", priceModifier: 1},
+            {label: "Box of 4", value: "box-4", priceModifier: 4},
+            {label: "Box of 8", value: "box-8", priceModifier: 8}
+        ]
+    }
 ];

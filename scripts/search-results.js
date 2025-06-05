@@ -45,15 +45,19 @@ function addProductsToPage(products) {
     const resultsContainer = document.querySelector('.products-container');
     resultsContainer.innerHTML = '';
     if (products.length === 0) {
-        resultsContainer.innerHTML = '<p>No products found matching your criteria.</p>';
+        resultsContainer.innerHTML = '<p class="sans-serif red-velvet">No products found matching your criteria.</p>';
+        resultsContainer.classList.add('no-results');
         return;
     } 
     for (let product of products) {
         let productCategory = formatCategoryTitle(product.category);
 
+        // Create a URL with the product id as a query parameter
+        const productUrl = `product.html?id=${encodeURIComponent(product.id)}`;
 
+        // Create the product element
         const productElement = `
-            <a href="" class="product-card-link sans-serif">
+            <a href="${[productUrl]}" class="product-card-link sans-serif">
                 <div class="product-card">
                     <span class="product-category">${productCategory}</span>
                     <img src="${product.image}" alt="Product Image" class="product-image">
@@ -88,9 +92,16 @@ function getSearchResults() {
     console.log('Sort:', sort);
     console.log('Search:', search);
 
+    const searchResults = document.querySelector('.search-results-header');
+    searchResults.innerHTML = '';
+
     // Change the page title based on search query
     if (search) {
         document.title = `Search Results for "${search}" - Sweet Mayada Cakes`;
+        const searchHead = `
+        <p class="medium search-query">Search results for "${search}"</p>
+        `
+        searchResults.insertAdjacentHTML('beforeend', searchHead);
     } else if (categories.length === 0 || (categories.length === 1 && categories[0] === '')) {
         document.title = "All Products - Sweet Mayada Cakes";
     } else if (categories.length === 1) {
@@ -148,10 +159,16 @@ function getSearchResults() {
         filteredProducts.sort(sortByNameDesc);
     }
 
+    const numResults = filteredProducts.length;
+    const searchBum = `
+        <p class="num-items">${numResults} items found</p>
+        `
+        searchResults.insertAdjacentHTML('beforeend', searchBum);
+
+
     // Display the filtered and sorted products
-    addProductsToPage(filteredProducts)
-
-
+    addProductsToPage(filteredProducts);
+    
 }
 
 function formatCategoryTitle(word) {

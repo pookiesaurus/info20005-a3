@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product - Sweet Mayada Cakes</title>
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/product.css">
+    <script src="../scripts/products.js" defer></script>
     <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/product.js" defer></script>
 </head>
 <body>
     <header>
@@ -65,17 +68,52 @@
     </header>
 
     <main>
-        <div class="img-container">
-            <img src="https://via.placeholder.com/600x400" alt="Product Image">
-        </div>
+        <div class="product sans-serif red-velvet">
+            <div class="img-container desktop">
+                <img src="https://placehold.co/600x400.png" alt="Product Image" id="desktop-img">
+            </div>
 
-        <div>
-            <h1>Product Name</h1>
-            <p class="product-price">$19.99</p>
-            <p class="product-description">This is a detailed description of the product. It includes all the features and benefits that make this product unique.</p>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" style="width: 60px;">
-            <button>Add to Cart</button>
+            <div class="product-details">
+                <div class="product-info">
+                    <h1 id="product-name" class="serif">Long Product Name Test</h1>
+                    <p id="product-price" class="serif">$19.99</p>
+                </div>
+
+                <div class="img-container mobile">
+                    <img src="https://placehold.co/600x400.png" alt="Product Image" id="mobile-img">
+                </div>
+                
+                <div class="options">
+                    <div class="custom-dropdown" id="size-dropdown">
+                        <div class="selected-option">Select a size</div>
+                        <ul class="dropdown-options">
+                            <li data-value="small">Small</li>
+                            <li data-value="medium">Medium</li>
+                            <li data-value="large">Large</li>
+                        </ul>
+                        <input type="hidden" name="flavour" id="size-value">
+                    </div>
+
+                    <div class="custom-dropdown" id="flavour-dropdown">
+                        <div class="selected-option">Select a flavour</div>
+                        <ul class="dropdown-options">
+                            <li data-value="vanilla">Vanilla</li>
+                            <li data-value="chocolate">Chocolate</li>
+                            <li data-value="red-velvet">Red Velvet</li>
+                            <li data-value="lemon">Lemon</li>
+                        </ul>
+                        <input type="hidden" name="flavour" id="flavour-value">
+                    </div>
+                    
+                </div>
+                <button id="add-to-cart" class="sans-serif" onclick="addToCart()" disabled>Add to Cart</button>
+                <p id="product-description" class="product-description sans-serif">This is a detailed description of the product. It includes all the features and benefits that make this product unique.</p>
+                
+            </div>
+        </div>
+        
+        <div id="added-to-cart-popup" class="popup hidden sans-serif medium">
+            Added to cart!
         </div>
     </main>
 </body>
