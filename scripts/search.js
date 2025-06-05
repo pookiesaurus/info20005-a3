@@ -1,5 +1,7 @@
 console.log("search.js loaded!");
 
+let ignoreInputEvents = false;
+
 // open advanced search form
 function toggleAdvancedSearch() {
     const advancedSearchForm = document.getElementsByClassName("advanced-search-container")[0];
@@ -17,10 +19,16 @@ const rangeInput = document.querySelectorAll(".slider input");
 const priceInput = document.querySelectorAll(".price-input input");
 const range = document.querySelector(".slider-container .progress");
 
+console.log("rangeInput[0]", rangeInput[0]);
+console.log("type:", rangeInput[0].type);
+console.log("value before setting:", rangeInput[0].value);
+
 let priceGap = 50;
 
 priceInput.forEach(input => {
     input.addEventListener("input", e => {
+        if (ignoreInputEvents) return;
+
         let minPrice = parseInt(priceInput[0].value);
         let maxPrice = parseInt(priceInput[1].value);
 
@@ -38,6 +46,8 @@ priceInput.forEach(input => {
 
 rangeInput.forEach(input => {
     input.addEventListener("input", e => {
+        if (ignoreInputEvents) return;
+
         let minVal = parseInt(rangeInput[0].value);
         let maxVal = parseInt(rangeInput[1].value);
 
@@ -66,25 +76,38 @@ range.style.right = 100 - (maxVal / 1500) * 100 + "%";
 
 
 function clearSearchForm() {
+    ignoreInputEvents = true;
+
     // Reset price sliders and inputs
     priceInput[0].value = 0;
     priceInput[1].value = 1500;
-    rangeInput[0].value = 0;
-    rangeInput[1].value = 1500;
+
+    // rangeInput[0].value = 100;
+    // rangeInput[1].value = 500;
+
+    // console.log(rangeInput[0]); // price-min input element
+    // console.log(rangeInput[1]); // price-max input element
+
     range.style.left = "0%";
     range.style.right = "0%";
 
     // Clear other inputs in advanced search if any
     const advancedInputs = document.querySelectorAll(".advanced-search-container input, .advanced-search-container select");
     advancedInputs.forEach(input => {
-        if (input.type === "checkbox" || input.type === "radio") {
+        if (input.type === "checkbox") {
             input.checked = false;
-        } else if (input.tagName === "SELECT") {
-            input.selectedIndex = 0;
+        } else if (input.type === "radio") {
+            input.checked = false;
         } else if (input !== priceInput[0] && input !== priceInput[1]) {
             input.value = "";
         }
     });
+    
+    
+    const sortDefault = document.querySelector("input[type='radio'][value='relevance']");
+    sortDefault.checked = true;
+
+    ignoreInputEvents = false;
 }
 
 // Search functionality
