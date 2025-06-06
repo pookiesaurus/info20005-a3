@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/checkout-flow.css">
     <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/cart.js" defer></script>
 </head>
 <body>
     <header>
@@ -69,38 +71,83 @@
             <h1 class="serif medium">Shopping Cart</h1>
         </div>
 
-        <div class="cart-container">
+        <div class="main-container">
             <div class="cart-items">
-                <div class="cart-item">
-                    <div class="cart-img">
-                        <img src="https://placehold.co/600x400.png" alt="Product Image">
-                    </div>
+                <h2 class="serif">Cart (0 items)</h2>
+                <div class="cart-item sans-serif">
+                    
                     <div class="cart-details">
-                        <h3>Name of the item</h3>
-                        <p>Price</p>
-                        <button>Remove X</button>
+                        <div class="cart-img">
+                            <img src="https://placehold.co/600x400.png" alt="Product Image">
+                        </div>
+                        <div class="cart-text">
+                            <p class="item-title">
+                                <span class="item-name serif">An especially long cake name</span>
+                                <span class="item-price serif">$25.00</span>
+                            </p>
+                            <p class="item-variant">Colour: Blue</p>
+                            <p class="item-variant">Colour: Blue</p>
+                            <p class="item-variant">Colour: Bloopidy</p>
+                            <div class="remove-button-container">
+                                <button type="button" onclick="removeItem()" class="sans-serif remove-btn">Remove item</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-details">
+                        <div class="cart-img">
+                            <img src="https://placehold.co/600x400.png" alt="Product Image">
+                        </div>
+                        <div class="cart-text">
+                            <p class="item-title">
+                                <span class="item-name serif">Chocolate Cake</span>
+                                <span class="item-price serif">$25.00</span>
+                            </p>
+                            <p class="item-variant">Colour: Blue</p>
+                            <div class="remove-button-container">
+                                <button type="button" onclick="removeItem()" class="sans-serif remove-btn">Remove item</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-details">
+                        <div class="cart-img">
+                            <img src="https://placehold.co/600x400.png" alt="Product Image">
+                        </div>
+                        <div class="cart-text">
+                            <p class="item-title">
+                                <span class="item-name serif">Chocolate Cake</span>
+                                <span class="item-price serif medium">$25.00</span>
+                            </p>
+                            <p class="item-variant">Colour: Blue</p>
+                            <div class="remove-button-container">
+                                <button type="button" onclick="removeItem()" class="sans-serif remove-btn">Remove item</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="checkout-container">
+                <h2 class="serif">Summary</h2>
+
                 <div class="subtotal-container">
                     <div class="row">
-                        <p class="subtitle">Subtotal</p>
-                        <p class="subtotal">$0.00</p>
+                        <p class="subtitle serif">Subtotal</p>
+                        <p class="subtotal sans-serif" id="subtotal">$0.00</p>
                     </div>
                     <div class="row">
-                        <p class="subtitle">Shipping</p>
-                        <p class="subtotal">Determined at checkout</p>
+                        <p class="subtitle serif">Shipping</p>
+                        <p class="subtotal sans-serif">Determined at checkout</p>
                     </div>
                     <div class="row">
-                        <p class="subtitle">Total</p>
-                        <p class="subtotal">$0.00 + Shipping</p>
+                        <p class="subtitle serif">Total</p>
+                        <p class="subtotal sans-serif" id="total">$0.00 + Shipping</p>
                     </div>
                 </div>
 
                 <div class="checkout-button-container">
-                    <button class="checkout-button serif medium" onclick="window.location.href='checkout.html'">Checkout</button>
+                    <button class="checkout-button sans-serif regular" onclick="window.location.href='checkout.html'">Checkout</button>
                 </div>
             </div>
         </div>
